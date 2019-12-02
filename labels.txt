@@ -1,0 +1,3 @@
+0 10lei
+1 20lei
+2 none
