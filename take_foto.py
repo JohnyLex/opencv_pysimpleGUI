@@ -69,21 +69,21 @@ if buttons in (None,'Registration'):
         event, values = windo.Read(timeout=20, timeout_key='timeout') 
         foto_name=[values[0]]
         if event in (None,'Capture'):
-            cv2.imwrite(filename='saved_img.jpg', img=frame)
+            cv2.imwrite(filename=f'{foto_name}.jpg', img=frame)
             cap.release()
-            img_new = cv2.imread('saved_img.jpg', cv2.IMREAD_GRAYSCALE)
+            img_new = cv2.imread(f'{foto_name}.jpg', cv2.IMREAD_GRAYSCALE)
             img_new = cv2.imshow("Captured Image", img_new)
             cv2.waitKey(1650)
             cv2.destroyAllWindows()
             print("Processing image...")
-            img_ = cv2.imread('saved_img.jpg', cv2.IMREAD_ANYCOLOR)
+            img_ = cv2.imread(f'{foto_name}.jpg', cv2.IMREAD_ANYCOLOR)
             print("Converting RGB image to grayscale...")
             gray = cv2.cvtColor(img_, cv2.COLOR_BGR2GRAY)
             print("Converted RGB image to grayscale...")
             print("Resizing image to 28x28 scale...")
             img_ = cv2.resize(gray,(28,28))
             print("Resized...")
-            img_resized = cv2.imwrite(filename='sd.jpg', img=img_)
+            img_resized = cv2.imwrite(filename=f'foto_name_.jpg', img=img_)
             print("Image saved!") 
             break
         if event in (None,'Cancel'):
