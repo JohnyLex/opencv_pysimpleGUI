@@ -1,0 +1,2 @@
+1. sudo pip3 install wrapt --upgrade --ignore-installed
+2. sudo pip3 install tensorflow
